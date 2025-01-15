@@ -1,44 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Minus, Square, X } from 'lucide-react';
 
 interface WindowProps {
   title: string;
   children: React.ReactNode;
   onClose: () => void;
+  initialPosition?: { x: number; y: number };
 }
 
-export const Window = ({ title, children, onClose }: WindowProps) => {
+export const Window = ({ title, children, onClose, initialPosition = { x: 100, y: 100 } }: WindowProps) => {
   const [isMaximized, setIsMaximized] = useState(false);
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [position, setPosition] = useState(initialPosition);
+  const dragRef = useRef<{ isDragging: boolean; startX: number; startY: number }>({
+    isDragging: false,
+    startX: 0,
+    startY: 0
+  });
 
-  const handleDragStart = (e: React.DragEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const offsetY = e.clientY - rect.top;
-    e.dataTransfer.setData('text/plain', `${offsetX},${offsetY}`);
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (isMaximized) return;
+    dragRef.current = {
+      isDragging: true,
+      startX: e.clientX - position.x,
+      startY: e.clientY - position.y
+    };
   };
 
-  const handleDrag = (e: React.DragEvent) => {
-    if (e.clientX === 0 && e.clientY === 0) return;
-    const [offsetX, offsetY] = e.dataTransfer.getData('text/plain').split(',');
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!dragRef.current.isDragging) return;
+    
+    const newX = e.clientX - dragRef.current.startX;
+    const newY = e.clientY - dragRef.current.startY;
+    
     setPosition({
-      x: e.clientX - parseInt(offsetX),
-      y: e.clientY - parseInt(offsetY),
+      x: Math.max(0, newX),
+      y: Math.max(0, newY)
     });
   };
+
+  const handleMouseUp = () => {
+    dragRef.current.isDragging = false;
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
 
   return (
     <div
       className={`fixed bg-[#ECE9D8] rounded shadow-vista-window animate-window-open border border-[#0054E3]
         ${isMaximized ? 'inset-0 m-0' : 'w-[600px]'}
       `}
-      style={!isMaximized ? { left: position.x, top: position.y } : undefined}
+      style={!isMaximized ? { 
+        left: position.x, 
+        top: position.y,
+        zIndex: dragRef.current.isDragging ? 50 : 10 
+      } : undefined}
     >
       <div
         className="h-8 bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] rounded-t flex items-center justify-between px-2 cursor-move"
-        draggable={!isMaximized}
-        onDragStart={handleDragStart}
-        onDrag={handleDrag}
+        onMouseDown={handleMouseDown}
       >
         <span className="text-white font-segoe text-sm flex items-center gap-2">
           {title}

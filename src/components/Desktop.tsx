@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import { Window } from './Window';
 
+interface WindowState {
+  id: number;
+  title: string;
+  position: { x: number; y: number };
+}
+
 export const Desktop = () => {
-  const [windows, setWindows] = useState<Array<{ id: number; title: string }>>([]);
+  const [windows, setWindows] = useState<WindowState[]>([]);
   const [nextId, setNextId] = useState(1);
 
   const openWindow = (title: string) => {
-    setWindows([...windows, { id: nextId, title }]);
+    // Calculate a cascading position for new windows
+    const offset = (windows.length * 30) % 150;
+    setWindows([...windows, { 
+      id: nextId, 
+      title,
+      position: { x: 100 + offset, y: 100 + offset }
+    }]);
     setNextId(nextId + 1);
   };
 
@@ -67,6 +79,7 @@ export const Desktop = () => {
           key={window.id}
           title={window.title}
           onClose={() => closeWindow(window.id)}
+          initialPosition={window.position}
         >
           <div className="p-4">
             <h2 className="text-lg font-semibold mb-4">{window.title}</h2>
