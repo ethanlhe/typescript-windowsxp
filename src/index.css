@@ -27,7 +27,7 @@
   }
 
   * {
-    @apply border-vista-border;
+    @apply border-vista-border font-tahoma;
   }
 
   body {

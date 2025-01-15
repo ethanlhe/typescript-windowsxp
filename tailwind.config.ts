@@ -33,6 +33,7 @@ export default {
       },
       fontFamily: {
         segoe: ["Segoe UI", "sans-serif"],
+        tahoma: ["Tahoma", "sans-serif"],
       },
       animation: {
         "window-open": "windowOpen 0.3s ease-out",
