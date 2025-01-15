@@ -80,7 +80,14 @@ const rightMenuItems: MenuItem[] = [
     />, 
     label: 'Help and Support' 
   },
-  { icon: <Terminal className="w-6 h-6" />, label: 'Run...' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/94a6af0b-2891-48c7-b77b-586289ce9a7e.png" 
+      alt="Run" 
+      className="w-6 h-6" 
+    />, 
+    label: 'Run...' 
+  },
 ];
 
 export const StartMenu = () => {
