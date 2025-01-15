@@ -23,7 +23,14 @@ const leftMenuItems: MenuItem[] = [
     />, 
     label: 'LinkedIn' 
   },
-  { icon: <Image className="w-6 h-6" />, label: 'Unsplash' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/fbfc1c8a-3fca-4858-a236-fd4ab5d313c7.png" 
+      alt="Unsplash" 
+      className="w-6 h-6" 
+    />, 
+    label: 'Unsplash' 
+  },
   { icon: <Bot className="w-6 h-6" />, label: 'HuggingFace' },
   { icon: <Home className="w-6 h-6" />, label: 'Personal Website' },
 ];
