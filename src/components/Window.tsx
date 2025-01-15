@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Minus, Square, X } from 'lucide-react';
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from './ui/resizable';
 
 interface WindowProps {
   title: string;
@@ -11,6 +12,7 @@ interface WindowProps {
 export const Window = ({ title, children, onClose, initialPosition = { x: 100, y: 100 } }: WindowProps) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [position, setPosition] = useState(initialPosition);
+  const [size, setSize] = useState({ width: 600, height: 400 });
   const dragRef = useRef<{ isDragging: boolean; startX: number; startY: number }>({
     isDragging: false,
     startX: 0,
@@ -54,11 +56,13 @@ export const Window = ({ title, children, onClose, initialPosition = { x: 100, y
   return (
     <div
       className={`fixed bg-[#ECE9D8] rounded shadow-vista-window animate-window-open border border-[#0054E3]
-        ${isMaximized ? 'inset-0 m-0' : 'w-[600px]'}
+        ${isMaximized ? 'inset-0 m-0' : ''}
       `}
       style={!isMaximized ? { 
         left: position.x, 
         top: position.y,
+        width: size.width,
+        height: size.height,
         zIndex: dragRef.current.isDragging ? 50 : 10 
       } : undefined}
     >
@@ -90,7 +94,40 @@ export const Window = ({ title, children, onClose, initialPosition = { x: 100, y
           </button>
         </div>
       </div>
-      <div className="p-4 bg-[#ECE9D8]">{children}</div>
+      <div className="p-4 bg-[#ECE9D8] h-[calc(100%-2rem)] relative">
+        {children}
+        {!isMaximized && (
+          <>
+            <div
+              className="absolute bottom-0 right-0 w-4 h-4 cursor-se-resize"
+              onMouseDown={(e) => {
+                e.stopPropagation();
+                const startWidth = size.width;
+                const startHeight = size.height;
+                const startX = e.clientX;
+                const startY = e.clientY;
+
+                const handleResize = (e: MouseEvent) => {
+                  const deltaX = e.clientX - startX;
+                  const deltaY = e.clientY - startY;
+                  setSize({
+                    width: Math.max(300, startWidth + deltaX),
+                    height: Math.max(200, startHeight + deltaY)
+                  });
+                };
+
+                const handleMouseUp = () => {
+                  document.removeEventListener('mousemove', handleResize);
+                  document.removeEventListener('mouseup', handleMouseUp);
+                };
+
+                document.addEventListener('mousemove', handleResize);
+                document.addEventListener('mouseup', handleMouseUp);
+              }}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
 };
