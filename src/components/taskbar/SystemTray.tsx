@@ -11,6 +11,14 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface SystemTrayProps {
   onCloseAllWindows?: () => void;
@@ -41,11 +49,41 @@ export const SystemTray = ({ onCloseAllWindows }: SystemTrayProps) => {
         alt="Users" 
         className="w-4 h-4 opacity-80"
       />
-      <img 
-        src="/lovable-uploads/81a0b106-411f-496c-825d-e7b2780de055.png" 
-        alt="Info" 
-        className="w-4 h-4 opacity-80"
-      />
+      <Dialog>
+        <DialogTrigger>
+          <img 
+            src="/lovable-uploads/81a0b106-411f-496c-825d-e7b2780de055.png" 
+            alt="Info" 
+            className="w-4 h-4 opacity-80 hover:opacity-100 cursor-pointer"
+          />
+        </DialogTrigger>
+        <DialogContent className="bg-vista-window border-vista-border">
+          <DialogHeader>
+            <DialogTitle className="text-vista-accent text-xl font-semibold mb-2">
+              About This Website
+            </DialogTitle>
+            <DialogDescription className="text-vista-text space-y-4">
+              <p className="text-lg font-semibold text-vista-accent mb-4">
+                Hey stranger! My name is Taishi, welcome to my digital playground :D
+              </p>
+              <div className="space-y-2">
+                <p>
+                  This website is a nostalgic tribute to Windows XP, built using modern web technologies while maintaining the classic XP aesthetic. It features:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Authentic Windows XP-style UI components and interactions</li>
+                  <li>Modern React and TypeScript foundation for smooth performance</li>
+                  <li>Tailwind CSS for pixel-perfect styling that matches the XP look</li>
+                  <li>Interactive windows system with minimize, maximize, and close functionality</li>
+                </ul>
+                <p className="mt-4">
+                  The project aims to recreate the memorable Windows XP experience while showcasing modern web development capabilities. Every detail, from the iconic taskbar to window animations, has been carefully crafted to bring back memories of the classic operating system.
+                </p>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <img 
