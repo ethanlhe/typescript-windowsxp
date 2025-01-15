@@ -6,7 +6,6 @@ import {
   Bot,
   Home,
   Terminal,
-  Search,
   HelpCircle,
 } from 'lucide-react';
 import { MenuItem } from './start-menu/types';
@@ -36,20 +35,11 @@ const rightMenuItems: MenuItem[] = [
   { 
     icon: <img 
       src="/lovable-uploads/e7f64bcb-dcc7-40a8-8120-e847898da537.png" 
-      alt="Control Panel" 
-      className="w-6 h-6" 
-    />, 
-    label: 'Control Panel' 
-  },
-  { 
-    icon: <img 
-      src="/lovable-uploads/e7f64bcb-dcc7-40a8-8120-e847898da537.png" 
       alt="Settings" 
       className="w-6 h-6" 
     />, 
     label: 'Settings' 
   },
-  { icon: <Search className="w-6 h-6" />, label: 'Search' },
   { icon: <HelpCircle className="w-6 h-6" />, label: 'Help and Support' },
   { icon: <Terminal className="w-6 h-6" />, label: 'Run...' },
 ];
