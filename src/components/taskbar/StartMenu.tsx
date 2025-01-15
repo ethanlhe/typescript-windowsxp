@@ -58,7 +58,7 @@ export const StartMenu = () => {
             </div>
           </div>
           
-          <div className="bg-[#d1d8e6] p-2">
+          <div className="bg-[#D3E4FD] p-2">
             <MenuSection items={rightMenuItems} />
           </div>
         </div>
