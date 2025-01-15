@@ -1,7 +1,6 @@
 import React from 'react';
 import { SheetContent } from '../ui/sheet';
 import { 
-  Github,
   Image,
   Bot,
   Terminal,
@@ -13,7 +12,14 @@ import { MenuSection } from './start-menu/MenuSection';
 import { BottomActions } from './start-menu/BottomActions';
 
 const leftMenuItems: MenuItem[] = [
-  { icon: <Github className="w-6 h-6" />, label: 'Github' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/901ccaa9-1397-469c-9194-61f73e330cf6.png" 
+      alt="Github" 
+      className="w-6 h-6" 
+    />, 
+    label: 'Github' 
+  },
   { 
     icon: <img 
       src="/lovable-uploads/9bec12b8-bbac-475c-aa34-ac6ad3518620.png" 
