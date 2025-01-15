@@ -29,7 +29,14 @@ const leftMenuItems: MenuItem[] = [
 ];
 
 const rightMenuItems: MenuItem[] = [
-  { icon: <Terminal className="w-6 h-6" />, label: 'My Documents' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/b934080e-edf5-4ccf-a1fc-47b2931c4852.png" 
+      alt="My Documents" 
+      className="w-6 h-6" 
+    />, 
+    label: 'My Documents' 
+  },
   { icon: <Image className="w-6 h-6" />, label: 'My Pictures' },
   { 
     icon: <img 
