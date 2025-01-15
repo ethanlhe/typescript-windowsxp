@@ -13,6 +13,14 @@ import {
 
 const leftMenuItems = [
   { icon: <Github className="w-5 h-5" />, label: 'Github' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/2c671e05-d27e-409d-8918-152d2cb5df88.png" 
+      alt="LinkedIn" 
+      className="w-5 h-5" 
+    />, 
+    label: 'LinkedIn' 
+  },
   { icon: <Image className="w-5 h-5" />, label: 'Unsplash' },
   { icon: <Bot className="w-5 h-5" />, label: 'HuggingFace' },
   { icon: <Home className="w-5 h-5" />, label: 'Personal Website' },
