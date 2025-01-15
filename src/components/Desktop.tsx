@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Window } from './Window';
-import { Folder, Monitor, Play, Trash2, Chrome } from 'lucide-react';
 
 export const Desktop = () => {
   const [windows, setWindows] = useState<Array<{ id: number; title: string }>>([]);
@@ -16,12 +15,34 @@ export const Desktop = () => {
   };
 
   const desktopIcons = [
-    { title: 'MyPal', icon: Chrome },
-    { title: 'CPU-Z', icon: Monitor },
-    { title: 'ROMs', icon: Folder },
-    { title: 'Emulators', icon: Folder },
-    { title: 'Media Player', icon: Play },
-    { title: 'Recycle Bin', icon: Trash2 },
+    { 
+      title: 'My Documents',
+      iconUrl: '/lovable-uploads/f8736e34-c644-4ce0-ad98-f0b518a54160.png'
+    },
+    { 
+      title: 'My Computer',
+      iconUrl: '/lovable-uploads/4a65b2e7-6145-4a17-9f3b-b14631721955.png'
+    },
+    { 
+      title: 'Network Places',
+      iconUrl: '/lovable-uploads/96dfca7f-0bc6-4074-a266-e53f629d5a6c.png'
+    },
+    { 
+      title: 'Notepad',
+      iconUrl: '/lovable-uploads/4acedd65-1a68-4afe-a9e3-d0618ac9e82a.png'
+    },
+    { 
+      title: 'My Briefcase',
+      iconUrl: '/lovable-uploads/1b0d2c84-c6fa-4555-9c61-7ab8f7ef3e2e.png'
+    },
+    { 
+      title: 'My Pictures',
+      iconUrl: '/lovable-uploads/9c61f943-1ac0-45ee-9419-4861af0f6b6a.png'
+    },
+    { 
+      title: 'My Videos',
+      iconUrl: '/lovable-uploads/6e35bda1-6465-4300-8789-438e81d958ad.png'
+    }
   ];
 
   return (
@@ -33,7 +54,11 @@ export const Desktop = () => {
             onClick={() => openWindow(icon.title)}
             className="desktop-icon flex flex-col items-center space-y-2 p-2 rounded hover:bg-white/10 transition-colors group w-20"
           >
-            <icon.icon className="w-10 h-10 text-white drop-shadow-lg" />
+            <img 
+              src={icon.iconUrl} 
+              alt={icon.title}
+              className="w-12 h-12 drop-shadow-lg"
+            />
             <span className="text-white text-sm font-segoe text-center drop-shadow-lg px-1 bg-black/20 rounded">
               {icon.title}
             </span>
