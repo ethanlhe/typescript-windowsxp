@@ -24,10 +24,6 @@ export const Desktop = () => {
       iconUrl: '/lovable-uploads/4a65b2e7-6145-4a17-9f3b-b14631721955.png'
     },
     { 
-      title: 'Network Places',
-      iconUrl: '/lovable-uploads/96dfca7f-0bc6-4074-a266-e53f629d5a6c.png'
-    },
-    { 
       title: 'Notepad',
       iconUrl: '/lovable-uploads/4acedd65-1a68-4afe-a9e3-d0618ac9e82a.png'
     },
@@ -59,7 +55,7 @@ export const Desktop = () => {
               alt={icon.title}
               className="w-12 h-12 drop-shadow-lg"
             />
-            <span className="text-white text-sm font-segoe text-center drop-shadow-lg px-1 bg-black/20 rounded">
+            <span className="text-white text-sm font-segoe text-center drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]">
               {icon.title}
             </span>
           </button>
