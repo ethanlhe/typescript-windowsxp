@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { formatInTimeZone } from 'date-fns-tz';
 
 export const TaskBar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -12,6 +12,8 @@ export const TaskBar = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const formattedTime = formatInTimeZone(currentTime, 'America/Los_Angeles', 'h:mm a');
 
   return (
     <>
@@ -29,7 +31,6 @@ export const TaskBar = () => {
               </button>
             </SheetTrigger>
             <div className="h-full border-l border-r border-blue-500 mx-2 px-2 flex items-center">
-              {/* Quick launch icons */}
               <button className="w-8 h-8 rounded hover:bg-blue-400/20 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/1e1aaff4-1c6b-4e96-abd5-1b10acf84ef4.png" 
@@ -41,7 +42,6 @@ export const TaskBar = () => {
           </div>
           
           <div className="flex items-center h-full bg-gradient-to-b from-blue-600 to-blue-700 px-2 space-x-4">
-            {/* System Tray Icons */}
             <img 
               src="/lovable-uploads/639a235f-bffe-4d55-838e-1944298536c6.png" 
               alt="Volume" 
@@ -64,7 +64,7 @@ export const TaskBar = () => {
             />
             <div className="flex items-center space-x-2 text-white border-l border-blue-500 pl-4">
               <span className="text-sm">
-                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                {formattedTime}
               </span>
             </div>
           </div>
