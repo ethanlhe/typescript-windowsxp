@@ -22,6 +22,9 @@ export default {
           "text-light": "#FFFFFF",
         },
       },
+      gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(80px, 1fr))',
+      },
       boxShadow: {
         vista: "0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1)",
         "vista-window": "0 4px 18px rgba(0, 0, 0, 0.25)",
