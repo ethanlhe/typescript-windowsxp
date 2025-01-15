@@ -5,7 +5,6 @@ import {
   Github,
   Image,
   Bot,
-  MessageSquare,
   Home,
   Terminal,
   Settings,
@@ -18,7 +17,6 @@ const leftMenuItems = [
   { icon: <Github className="w-5 h-5" />, label: 'Github' },
   { icon: <Image className="w-5 h-5" />, label: 'Unsplash' },
   { icon: <Bot className="w-5 h-5" />, label: 'HuggingFace' },
-  { icon: <MessageSquare className="w-5 h-5" />, label: 'Bluesky' },
   { icon: <Home className="w-5 h-5" />, label: 'Personal Website' },
 ];
 
