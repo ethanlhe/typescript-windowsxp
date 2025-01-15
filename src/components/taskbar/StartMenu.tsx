@@ -49,7 +49,7 @@ const leftMenuItems: MenuItem[] = [
 const rightMenuItems: MenuItem[] = [
   { 
     icon: <img 
-      src="/lovable-uploads/6989b914-37f9-4173-990d-ba976b767c7f.png" 
+      src="/lovable-uploads/b934080e-edf5-4ccf-a1fc-47b2931c4852.png" 
       alt="My Documents" 
       className="w-6 h-6" 
     />, 
