@@ -76,19 +76,19 @@ export const Window = ({ title, children, onClose, initialPosition = { x: 100, y
         <div className="flex items-center gap-[2px]">
           <button
             onClick={() => onClose()}
-            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#3C81E5] rounded-sm group"
+            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#3C81E5] rounded-sm group border border-white/40"
           >
             <Minus className="w-3 h-3 text-white" />
           </button>
           <button
             onClick={() => setIsMaximized(!isMaximized)}
-            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#3C81E5] rounded-sm group"
+            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#3C81E5] rounded-sm group border border-white/40"
           >
             <Square className="w-3 h-3 text-white" />
           </button>
           <button
             onClick={onClose}
-            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#E81123] rounded-sm group"
+            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#E81123] rounded-sm group border border-white/40"
           >
             <X className="w-3 h-3 text-white" />
           </button>
