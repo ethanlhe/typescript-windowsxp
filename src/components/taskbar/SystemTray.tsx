@@ -57,11 +57,13 @@ export const SystemTray = ({ onCloseAllWindows }: SystemTrayProps) => {
             className="w-4 h-4 opacity-80 hover:opacity-100 cursor-pointer"
           />
         </DialogTrigger>
-        <DialogContent className="bg-vista-window border-vista-border">
-          <DialogHeader>
-            <DialogTitle className="text-vista-accent text-xl font-semibold mb-2">
+        <DialogContent className="bg-vista-window border-2 border-vista-border rounded-lg shadow-vista-window p-0 max-w-2xl">
+          <div className="bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] p-2">
+            <DialogTitle className="text-white text-xl font-semibold">
               About This Website
             </DialogTitle>
+          </div>
+          <DialogHeader className="p-6">
             <DialogDescription className="text-vista-text space-y-4">
               <p className="text-lg font-semibold text-vista-accent mb-4">
                 Hey stranger! My name is Taishi, welcome to my digital playground :D
