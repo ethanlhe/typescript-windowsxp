@@ -4,7 +4,6 @@ import {
   Github,
   Image,
   Bot,
-  Home,
   Terminal,
   HelpCircle,
 } from 'lucide-react';
@@ -32,7 +31,14 @@ const leftMenuItems: MenuItem[] = [
     label: 'Unsplash' 
   },
   { icon: <Bot className="w-6 h-6" />, label: 'HuggingFace' },
-  { icon: <Home className="w-6 h-6" />, label: 'Personal Website' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/9790699b-2351-4e15-a1d6-7ec499b94d02.png" 
+      alt="Personal Website" 
+      className="w-6 h-6" 
+    />, 
+    label: 'Personal Website' 
+  },
 ];
 
 const rightMenuItems: MenuItem[] = [
