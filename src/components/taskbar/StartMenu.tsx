@@ -47,11 +47,11 @@ export const StartMenu = () => {
         <div className="bg-gradient-to-b from-blue-700 to-blue-600 p-4 border-r border-blue-500">
           <div className="flex items-center space-x-3 mb-6 bg-blue-800/50 p-2 rounded">
             <img 
-              src="/lovable-uploads/1e1aaff4-1c6b-4e96-abd5-1b10acf84ef4.png" 
+              src="/lovable-uploads/b91930ab-1d49-415e-99b8-bd8661ca85a4.png" 
               alt="User" 
               className="w-12 h-12 rounded-full border-2 border-white"
             />
-            <span className="text-white font-semibold">Administrator</span>
+            <span className="text-white font-semibold">Taishi Walden</span>
           </div>
           <div className="space-y-1">
             {leftMenuItems.map((item, index) => (
