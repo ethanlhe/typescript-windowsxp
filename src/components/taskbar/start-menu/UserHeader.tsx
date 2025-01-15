@@ -7,7 +7,7 @@ export const UserHeader = () => {
         <img 
           src="/lovable-uploads/b91930ab-1d49-415e-99b8-bd8661ca85a4.png" 
           alt="User" 
-          className="w-12 h-12 rounded-full border-2 border-white"
+          className="w-12 h-12 rounded-lg border-2 border-white"
         />
         <span className="text-white font-bold text-lg">Taishi Walden</span>
       </div>
