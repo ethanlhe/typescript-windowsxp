@@ -5,7 +5,11 @@ import { QuickLaunch } from './taskbar/QuickLaunch';
 import { SystemTray } from './taskbar/SystemTray';
 import { StartMenu } from './taskbar/StartMenu';
 
-export const TaskBar = () => {
+interface TaskBarProps {
+  onCloseAllWindows?: () => void;
+}
+
+export const TaskBar = ({ onCloseAllWindows }: TaskBarProps) => {
   return (
     <Sheet>
       <div className="fixed bottom-0 left-0 right-0 h-12 bg-gradient-to-r from-blue-700 to-blue-600 border-t border-blue-400 flex items-center justify-between px-1 z-50">
@@ -18,7 +22,7 @@ export const TaskBar = () => {
             {/* Window buttons will be added here in the next iteration */}
           </div>
         </div>
-        <SystemTray />
+        <SystemTray onCloseAllWindows={onCloseAllWindows} />
       </div>
       <StartMenu />
     </Sheet>

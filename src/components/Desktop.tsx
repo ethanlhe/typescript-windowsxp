@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Window } from './Window';
+import { TaskBar } from './TaskBar';
 
 interface WindowState {
   id: number;
@@ -12,7 +13,6 @@ export const Desktop = () => {
   const [nextId, setNextId] = useState(1);
 
   const openWindow = (title: string) => {
-    // Calculate a cascading position for new windows
     const offset = (windows.length * 30) % 150;
     setWindows([...windows, { 
       id: nextId, 
@@ -24,6 +24,10 @@ export const Desktop = () => {
 
   const closeWindow = (id: number) => {
     setWindows(windows.filter(w => w.id !== id));
+  };
+
+  const closeAllWindows = () => {
+    setWindows([]);
   };
 
   const desktopIcons = [
@@ -87,6 +91,8 @@ export const Desktop = () => {
           </div>
         </Window>
       ))}
+      
+      <TaskBar onCloseAllWindows={closeAllWindows} />
     </div>
   );
 };
