@@ -4,7 +4,6 @@ import {
   Image,
   Bot,
   Terminal,
-  HelpCircle,
 } from 'lucide-react';
 import { MenuItem } from './start-menu/types';
 import { UserHeader } from './start-menu/UserHeader';
@@ -73,7 +72,14 @@ const rightMenuItems: MenuItem[] = [
     />, 
     label: 'Settings' 
   },
-  { icon: <HelpCircle className="w-6 h-6" />, label: 'Help and Support' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/3e54d53e-af2e-42d6-b066-4e18735b907d.png" 
+      alt="Help and Support" 
+      className="w-6 h-6" 
+    />, 
+    label: 'Help and Support' 
+  },
   { icon: <Terminal className="w-6 h-6" />, label: 'Run...' },
 ];
 
