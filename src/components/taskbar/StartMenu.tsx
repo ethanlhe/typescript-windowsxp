@@ -17,7 +17,7 @@ const leftMenuItems: MenuItem[] = [
   { icon: <Github className="w-6 h-6" />, label: 'Github' },
   { 
     icon: <img 
-      src="/lovable-uploads/2c671e05-d27e-409d-8918-152d2cb5df88.png" 
+      src="/lovable-uploads/9bec12b8-bbac-475c-aa34-ac6ad3518620.png" 
       alt="LinkedIn" 
       className="w-6 h-6" 
     />, 
