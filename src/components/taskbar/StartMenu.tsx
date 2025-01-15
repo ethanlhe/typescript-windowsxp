@@ -41,7 +41,7 @@ const rightMenuItems: MenuItem[] = [
   },
   { 
     icon: <img 
-      src="/lovable-uploads/e7f64bcb-dcc7-40a8-8120-e847898da537.png" 
+      src="/lovable-uploads/126b68a4-507f-465c-bd2a-f9659a16e2b0.png" 
       alt="Settings" 
       className="w-6 h-6" 
     />, 
