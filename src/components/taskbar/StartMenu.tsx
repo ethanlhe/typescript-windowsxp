@@ -1,40 +1,33 @@
 import React from 'react';
 import { SheetContent } from '../ui/sheet';
 import { 
-  Chrome, 
-  Image, 
-  Settings, 
-  Map, 
-  Users, 
-  Calculator, 
+  Linkedin,
+  Github,
+  Image,
+  Bot,
+  MessageSquare,
+  Home,
+  Terminal,
+  Settings,
   Search,
   HelpCircle,
-  Terminal,
-  Monitor
 } from 'lucide-react';
 
 const leftMenuItems = [
-  { icon: <Chrome className="w-5 h-5" />, label: 'Google Chrome' },
-  { icon: <Image className="w-5 h-5" />, label: 'Photos' },
-  { icon: <Settings className="w-5 h-5" />, label: 'Settings' },
-  { icon: <Map className="w-5 h-5" />, label: 'Maps' },
-  { icon: <Image className="w-5 h-5" />, label: 'Paint' },
-  { icon: <Monitor className="w-5 h-5" />, label: 'Desktop Sidebar' },
-  { icon: <Users className="w-5 h-5" />, label: 'People' },
-  { icon: <Terminal className="w-5 h-5" />, label: 'Sticky Notes' },
-  { icon: <Terminal className="w-5 h-5" />, label: 'Snipping Tool' },
-  { icon: <Calculator className="w-5 h-5" />, label: 'Calculator' },
-  { icon: <Terminal className="w-5 h-5" />, label: 'Xbox Game Bar' },
+  { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
+  { icon: <Github className="w-5 h-5" />, label: 'Github' },
+  { icon: <Image className="w-5 h-5" />, label: 'Unsplash' },
+  { icon: <Bot className="w-5 h-5" />, label: 'HuggingFace' },
+  { icon: <MessageSquare className="w-5 h-5" />, label: 'Bluesky' },
+  { icon: <Home className="w-5 h-5" />, label: 'Personal Website' },
 ];
 
 const rightMenuItems = [
   { icon: <Terminal className="w-5 h-5" />, label: 'My Documents' },
   { icon: <Image className="w-5 h-5" />, label: 'My Pictures' },
   { icon: <Terminal className="w-5 h-5" />, label: 'My Music' },
-  { icon: <Monitor className="w-5 h-5" />, label: 'My Computer' },
   { icon: <Settings className="w-5 h-5" />, label: 'Control Panel' },
   { icon: <Settings className="w-5 h-5" />, label: 'Settings' },
-  { icon: <Terminal className="w-5 h-5" />, label: 'Networks' },
   { icon: <Search className="w-5 h-5" />, label: 'Search' },
   { icon: <HelpCircle className="w-5 h-5" />, label: 'Help and Support' },
   { icon: <Terminal className="w-5 h-5" />, label: 'Run...' },
