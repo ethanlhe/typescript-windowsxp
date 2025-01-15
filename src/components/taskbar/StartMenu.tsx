@@ -84,7 +84,7 @@ export const StartMenu = () => {
         <div className="absolute bottom-0 left-0 right-0 p-2 bg-[#d1d8e6] border-t border-gray-300 flex justify-between">
           <button className="text-[#333] hover:bg-[#2f71cd] hover:text-white px-3 py-1.5 rounded flex items-center space-x-2 transition-colors duration-200">
             <img 
-              src="/lovable-uploads/logout.png" 
+              src="/lovable-uploads/53ef17ac-7369-4efb-9275-38096a5f5ce1.png" 
               alt="Log Off" 
               className="w-5 h-5"
             />
