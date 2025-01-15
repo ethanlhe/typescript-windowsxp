@@ -2,7 +2,6 @@ import React from 'react';
 import { SheetContent } from '../ui/sheet';
 import { 
   Image,
-  Bot,
   Terminal,
 } from 'lucide-react';
 import { MenuItem } from './start-menu/types';
@@ -35,7 +34,14 @@ const leftMenuItems: MenuItem[] = [
     />, 
     label: 'Unsplash' 
   },
-  { icon: <Bot className="w-6 h-6" />, label: 'HuggingFace' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/a3afcc23-7e14-48d1-a9b3-37d6a529a850.png" 
+      alt="HuggingFace" 
+      className="w-6 h-6" 
+    />, 
+    label: 'HuggingFace' 
+  },
   { 
     icon: <img 
       src="/lovable-uploads/9790699b-2351-4e15-a1d6-7ec499b94d02.png" 
