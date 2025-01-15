@@ -1,14 +1,6 @@
 import React from 'react';
 import { formatInTimeZone } from 'date-fns-tz';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -40,52 +32,10 @@ export const SystemTray = ({ onCloseAllWindows }: SystemTrayProps) => {
   return (
     <div className="flex items-center h-full bg-gradient-to-b from-blue-600 to-blue-700 px-2 space-x-4">
       <img 
-        src="/lovable-uploads/639a235f-bffe-4d55-838e-1944298536c6.png" 
-        alt="Volume" 
-        className="w-4 h-4 opacity-80"
-      />
-      <img 
         src="/lovable-uploads/9933f426-7fbd-40c0-af52-90ecc7059880.png" 
         alt="Users" 
         className="w-4 h-4 opacity-80"
       />
-      <Dialog>
-        <DialogTrigger>
-          <img 
-            src="/lovable-uploads/81a0b106-411f-496c-825d-e7b2780de055.png" 
-            alt="Info" 
-            className="w-4 h-4 opacity-80 hover:opacity-100 cursor-pointer"
-          />
-        </DialogTrigger>
-        <DialogContent className="fixed bg-[#ECE9D8] rounded shadow-vista-window animate-window-open border border-[#0054E3] w-[600px] p-0">
-          <div className="h-8 bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] rounded-t flex items-center justify-between px-2">
-            <DialogTitle className="text-white font-segoe text-sm">
-              About This Website
-            </DialogTitle>
-          </div>
-          <DialogHeader className="p-6">
-            <DialogDescription className="text-vista-text space-y-4">
-              <p className="text-lg font-semibold text-vista-accent mb-4">
-                Hey stranger! My name is Taishi, welcome to my digital playground :D
-              </p>
-              <div className="space-y-2">
-                <p>
-                  This website is a nostalgic tribute to Windows XP, built using modern web technologies while maintaining the classic XP aesthetic. It features:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Authentic Windows XP-style UI components and interactions</li>
-                  <li>Modern React and TypeScript foundation for smooth performance</li>
-                  <li>Tailwind CSS for pixel-perfect styling that matches the XP look</li>
-                  <li>Interactive windows system with minimize, maximize, and close functionality</li>
-                </ul>
-                <p className="mt-4">
-                  The project aims to recreate the memorable Windows XP experience while showcasing modern web development capabilities. Every detail, from the iconic taskbar to window animations, has been carefully crafted to bring back memories of the classic operating system.
-                </p>
-              </div>
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <img 
