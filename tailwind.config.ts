@@ -15,11 +15,13 @@ export default {
         vista: {
           pearl: "#E3EAF3",
           taskbar: "#1F3B7B",
-          window: "#FFFFFF",
-          accent: "#0078D7",
-          border: "#8BA0BC",
+          window: "#ECE9D8",
+          accent: "#0054E3",
+          "accent-hover": "#3C81E5",
+          border: "#0054E3",
           text: "#000000",
           "text-light": "#FFFFFF",
+          "close-hover": "#E81123",
         },
       },
       gridTemplateColumns: {
@@ -27,7 +29,7 @@ export default {
       },
       boxShadow: {
         vista: "0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1)",
-        "vista-window": "0 4px 18px rgba(0, 0, 0, 0.25)",
+        "vista-window": "2px 2px 6px rgba(0, 0, 0, 0.2)",
       },
       fontFamily: {
         segoe: ["Segoe UI", "sans-serif"],
