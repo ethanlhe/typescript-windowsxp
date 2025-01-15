@@ -1,6 +1,14 @@
 import React from 'react';
 import { formatInTimeZone } from 'date-fns-tz';
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -11,14 +19,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 interface SystemTrayProps {
   onCloseAllWindows?: () => void;
@@ -57,9 +57,9 @@ export const SystemTray = ({ onCloseAllWindows }: SystemTrayProps) => {
             className="w-4 h-4 opacity-80 hover:opacity-100 cursor-pointer"
           />
         </DialogTrigger>
-        <DialogContent className="bg-vista-window border-2 border-vista-border rounded-lg shadow-vista-window p-0 max-w-2xl">
-          <div className="bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] p-2">
-            <DialogTitle className="text-white text-xl font-semibold">
+        <DialogContent className="fixed bg-[#ECE9D8] rounded shadow-vista-window animate-window-open border border-[#0054E3] w-[600px] p-0">
+          <div className="h-8 bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] rounded-t flex items-center justify-between px-2">
+            <DialogTitle className="text-white font-segoe text-sm">
               About This Website
             </DialogTitle>
           </div>
