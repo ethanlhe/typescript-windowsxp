@@ -87,7 +87,11 @@ export const Desktop = () => {
         >
           <div className="p-4">
             <h2 className="text-lg font-semibold mb-4">{window.title}</h2>
-            <p className="text-gray-600">Content for {window.title}</p>
+            <p className="text-gray-600">
+              {window.title === 'Notepad' 
+                ? "Taishi's random thoughts that were not sufficient enough to become full blogs"
+                : `Content for ${window.title}`}
+            </p>
           </div>
         </Window>
       ))}
