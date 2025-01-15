@@ -31,7 +31,14 @@ const leftMenuItems: MenuItem[] = [
 const rightMenuItems: MenuItem[] = [
   { icon: <Terminal className="w-6 h-6" />, label: 'My Documents' },
   { icon: <Image className="w-6 h-6" />, label: 'My Pictures' },
-  { icon: <Terminal className="w-6 h-6" />, label: 'My Music' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/22ca3516-6ce9-4d06-9c2e-f8724afb08da.png" 
+      alt="My Music" 
+      className="w-6 h-6" 
+    />, 
+    label: 'My Music' 
+  },
   { 
     icon: <img 
       src="/lovable-uploads/e7f64bcb-dcc7-40a8-8120-e847898da537.png" 
