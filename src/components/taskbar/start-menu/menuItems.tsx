@@ -46,7 +46,7 @@ export const rightMenuItems: MenuItem[] = [
   },
   { 
     icon: <img 
-      src="/lovable-uploads/6b52b025-c8fc-4e4b-9e67-16a321f98428.png" 
+      src="/lovable-uploads/a6918753-b977-4b95-b7ac-7fa56656bd65.png" 
       alt="My Pictures" 
       className="w-6 h-6" 
     />, 
