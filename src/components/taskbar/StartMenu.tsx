@@ -35,9 +35,9 @@ const rightMenuItems = [
 
 export const StartMenu = () => {
   return (
-    <SheetContent side="bottom" className="h-[70vh] p-0 w-[400px] left-0">
+    <SheetContent side="bottom" className="h-[70vh] p-0 w-[400px] left-0" hideClose>
       <div className="h-full bg-[#3a6ea5]">
-        <div className="bg-gradient-to-r from-[#0a246a] to-[#3a6ea5] p-2 w-full">
+        <div className="bg-gradient-to-r from-[#2277d9] to-[#5aa1ff] p-2 w-full">
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/b91930ab-1d49-415e-99b8-bd8661ca85a4.png" 
