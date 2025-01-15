@@ -88,7 +88,7 @@ export const Window = ({ title, children, onClose, initialPosition = { x: 100, y
           </button>
           <button
             onClick={onClose}
-            className="w-[22px] h-[22px] flex items-center justify-center hover:bg-[#E81123] rounded-sm group border border-white/40"
+            className="w-[22px] h-[22px] flex items-center justify-center bg-[#E81123] hover:bg-[#E81123] rounded-sm group border border-white/40"
           >
             <X className="w-3 h-3 text-white" />
           </button>
