@@ -47,7 +47,7 @@ export const StartMenu = () => {
       <div className="h-full bg-[#3a6ea5] rounded-t-lg">
         <UserHeader />
         
-        <div className="grid grid-cols-[60%,40%] h-[calc(100%-64px)]">
+        <div className="grid grid-cols-2 h-[calc(100%-64px)]">
           <div className="bg-white p-2">
             <MenuSection items={leftMenuItems} />
             <div className="mt-4 pt-4 border-t border-gray-300">
