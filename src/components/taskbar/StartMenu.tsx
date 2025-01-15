@@ -61,7 +61,14 @@ const rightMenuItems: MenuItem[] = [
     />, 
     label: 'My Documents' 
   },
-  { icon: <Image className="w-6 h-6" />, label: 'My Pictures' },
+  { 
+    icon: <img 
+      src="/lovable-uploads/6b52b025-c8fc-4e4b-9e67-16a321f98428.png" 
+      alt="My Pictures" 
+      className="w-6 h-6" 
+    />, 
+    label: 'My Pictures' 
+  },
   { 
     icon: <img 
       src="/lovable-uploads/22ca3516-6ce9-4d06-9c2e-f8724afb08da.png" 
