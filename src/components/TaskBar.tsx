@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { formatInTimeZone } from 'date-fns-tz';
+import { 
+  Chrome, 
+  Image, 
+  Settings, 
+  Map, 
+  Users, 
+  Calculator, 
+  Search,
+  HelpCircle,
+  Terminal,
+  Monitor
+} from 'lucide-react';
 
 export const TaskBar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -14,6 +26,33 @@ export const TaskBar = () => {
   }, []);
 
   const formattedTime = formatInTimeZone(currentTime, 'America/Los_Angeles', 'h:mm a');
+
+  const leftMenuItems = [
+    { icon: <Chrome className="w-5 h-5" />, label: 'Google Chrome' },
+    { icon: <Image className="w-5 h-5" />, label: 'Photos' },
+    { icon: <Settings className="w-5 h-5" />, label: 'Settings' },
+    { icon: <Map className="w-5 h-5" />, label: 'Maps' },
+    { icon: <Image className="w-5 h-5" />, label: 'Paint' },
+    { icon: <Monitor className="w-5 h-5" />, label: 'Desktop Sidebar' },
+    { icon: <Users className="w-5 h-5" />, label: 'People' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'Sticky Notes' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'Snipping Tool' },
+    { icon: <Calculator className="w-5 h-5" />, label: 'Calculator' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'Xbox Game Bar' },
+  ];
+
+  const rightMenuItems = [
+    { icon: <Terminal className="w-5 h-5" />, label: 'My Documents' },
+    { icon: <Image className="w-5 h-5" />, label: 'My Pictures' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'My Music' },
+    { icon: <Monitor className="w-5 h-5" />, label: 'My Computer' },
+    { icon: <Settings className="w-5 h-5" />, label: 'Control Panel' },
+    { icon: <Settings className="w-5 h-5" />, label: 'Settings' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'Networks' },
+    { icon: <Search className="w-5 h-5" />, label: 'Search' },
+    { icon: <HelpCircle className="w-5 h-5" />, label: 'Help and Support' },
+    { icon: <Terminal className="w-5 h-5" />, label: 'Run...' },
+  ];
 
   return (
     <>
@@ -69,10 +108,10 @@ export const TaskBar = () => {
             </div>
           </div>
         </div>
-        <SheetContent side="bottom" className="h-[70vh] bg-white/95 backdrop-blur-sm p-0">
-          <div className="grid grid-cols-2 h-full">
-            <div className="bg-gradient-to-b from-blue-700 to-blue-600 p-4">
-              <div className="flex items-center space-x-3 mb-6">
+        <SheetContent side="bottom" className="h-[70vh] bg-gradient-to-r from-blue-800 to-blue-700 p-0">
+          <div className="grid grid-cols-[250px,1fr] h-full">
+            <div className="bg-gradient-to-b from-blue-700 to-blue-600 p-4 border-r border-blue-500">
+              <div className="flex items-center space-x-3 mb-6 bg-blue-800/50 p-2 rounded">
                 <img 
                   src="/lovable-uploads/1e1aaff4-1c6b-4e96-abd5-1b10acf84ef4.png" 
                   alt="User" 
@@ -80,36 +119,45 @@ export const TaskBar = () => {
                 />
                 <span className="text-white font-semibold">Administrator</span>
               </div>
-              <div className="space-y-2">
-                {['My Documents', 'My Pictures', 'My Music', 'My Computer', 'Control Panel', 'Help and Support'].map((item) => (
+              <div className="space-y-1">
+                {leftMenuItems.map((item, index) => (
                   <button 
-                    key={item}
-                    className="w-full text-left text-white hover:bg-blue-500/50 px-2 py-1 rounded"
+                    key={index}
+                    className="w-full text-left text-white hover:bg-blue-500/50 px-2 py-2 rounded flex items-center space-x-3"
                   >
-                    {item}
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </button>
+                ))}
+                <div className="mt-4 pt-4 border-t border-blue-500">
+                  <button className="w-full text-left text-white hover:bg-blue-500/50 px-2 py-2 rounded flex items-center space-x-3">
+                    <Terminal className="w-5 h-5" />
+                    <span>All Programs</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-600/90 to-blue-700/90 p-4">
+              <div className="space-y-1">
+                {rightMenuItems.map((item, index) => (
+                  <button 
+                    key={index}
+                    className="w-full text-left text-white hover:bg-blue-500/50 px-2 py-2 rounded flex items-center space-x-3"
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
                   </button>
                 ))}
               </div>
-            </div>
-            <div className="bg-white p-4">
-              <div className="space-y-2">
-                {['Internet Explorer', 'Outlook Express', 'Windows Media Player', 'Windows Messenger'].map((item) => (
-                  <button 
-                    key={item}
-                    className="w-full text-left text-gray-700 hover:bg-gray-100 px-2 py-1 rounded"
-                  >
-                    {item}
-                  </button>
-                ))}
-                <hr className="my-4" />
-                {['All Programs', 'Run...', 'Log Off', 'Turn Off Computer'].map((item) => (
-                  <button 
-                    key={item}
-                    className="w-full text-left text-gray-700 hover:bg-gray-100 px-2 py-1 rounded"
-                  >
-                    {item}
-                  </button>
-                ))}
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-blue-900/50 flex justify-between">
+                <button className="text-white hover:bg-blue-500/50 px-4 py-2 rounded flex items-center space-x-2">
+                  <Terminal className="w-5 h-5" />
+                  <span>Log Off</span>
+                </button>
+                <button className="text-white hover:bg-blue-500/50 px-4 py-2 rounded flex items-center space-x-2">
+                  <Terminal className="w-5 h-5" />
+                  <span>Turn Off Computer</span>
+                </button>
               </div>
             </div>
           </div>
