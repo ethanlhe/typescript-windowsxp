@@ -9,7 +9,6 @@ import {
   Settings,
   Search,
   HelpCircle,
-  Power
 } from 'lucide-react';
 
 const leftMenuItems = [
@@ -91,7 +90,11 @@ export const StartMenu = () => {
             <span>Log Off</span>
           </button>
           <button className="text-[#333] hover:bg-[#2f71cd] hover:text-white px-3 py-1.5 rounded flex items-center space-x-2 transition-colors duration-200">
-            <Power className="w-5 h-5" />
+            <img 
+              src="/lovable-uploads/2b99f898-6363-42a6-8e4c-d72c1937d16a.png" 
+              alt="Turn Off Computer" 
+              className="w-5 h-5"
+            />
             <span>Turn Off Computer</span>
           </button>
         </div>
