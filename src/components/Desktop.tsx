@@ -36,10 +36,6 @@ export const Desktop = () => {
       iconUrl: '/lovable-uploads/f8736e34-c644-4ce0-ad98-f0b518a54160.png'
     },
     { 
-      title: 'My Computer',
-      iconUrl: '/lovable-uploads/4a65b2e7-6145-4a17-9f3b-b14631721955.png'
-    },
-    { 
       title: 'Notepad',
       iconUrl: '/lovable-uploads/4acedd65-1a68-4afe-a9e3-d0618ac9e82a.png'
     },
