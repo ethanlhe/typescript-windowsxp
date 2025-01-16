@@ -53,6 +53,14 @@ export const SystemTray = ({ onCloseAllWindows }: SystemTrayProps) => {
               About This Website
             </DialogTitle>
           </div>
+          <div className="h-12 bg-gradient-to-r from-[#0054E3] to-[#2E8AEF] flex items-center justify-center space-x-2">
+            <img 
+              src="/lovable-uploads/1e1aaff4-1c6b-4e96-abd5-1b10acf84ef4.png" 
+              alt="Windows XP" 
+              className="w-6 h-6" 
+            />
+            <span className="text-white font-semibold">Windows XP</span>
+          </div>
           <DialogHeader className="p-6">
             <DialogDescription className="text-vista-text space-y-4">
               <p className="text-lg font-semibold text-vista-accent mb-4">
