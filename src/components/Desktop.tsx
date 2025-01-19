@@ -54,7 +54,7 @@ export const Desktop = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[url('/lovable-uploads/30ef0371-3b9b-4877-a444-75af5ffce3ad.png')] bg-cover bg-center p-4">
+    <div className="min-h-screen bg-[url('/lovable-uploads/1ca93d81-8052-47a5-9ebd-bbedc21d0ad5.png')] bg-cover bg-center p-4">
       <div className="grid grid-cols-auto-fit gap-6 p-4">
         {desktopIcons.map((icon, index) => (
           <button
