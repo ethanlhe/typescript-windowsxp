@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Sheet } from './ui/sheet';
 import { StartButton } from './taskbar/StartButton';
 import { SystemTray } from './taskbar/SystemTray';
-import { StartMenu } from './taskbar/StartMenu';
+
+// Lazy load the StartMenu component
+const StartMenu = lazy(() => import('./taskbar/StartMenu').then(module => ({ 
+  default: module.StartMenu 
+})));
 
 interface TaskBarProps {
   onCloseAllWindows?: () => void;
@@ -21,7 +25,9 @@ export const TaskBar = ({ onCloseAllWindows }: TaskBarProps) => {
         </div>
         <SystemTray onCloseAllWindows={onCloseAllWindows} />
       </div>
-      <StartMenu />
+      <Suspense fallback={<div className="h-[70vh] w-[400px] bg-[#3a6ea5] animate-pulse" />}>
+        <StartMenu />
+      </Suspense>
     </Sheet>
   );
 };
