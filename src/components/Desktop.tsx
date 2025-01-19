@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Window } from './Window';
 import { TaskBar } from './TaskBar';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { Textarea } from './ui/textarea';
 
 interface WindowState {
   id: number;
@@ -53,6 +55,44 @@ export const Desktop = () => {
     }
   ];
 
+  const renderWindowContent = (title: string) => {
+    if (title === 'Notepad') {
+      return (
+        <Tabs defaultValue="personal" className="w-full">
+          <TabsList className="w-full bg-vista-window border-b border-vista-border">
+            <TabsTrigger value="personal" className="data-[state=active]:bg-white">Personal Notes</TabsTrigger>
+            <TabsTrigger value="work" className="data-[state=active]:bg-white">Work Notes</TabsTrigger>
+            <TabsTrigger value="ideas" className="data-[state=active]:bg-white">Ideas</TabsTrigger>
+          </TabsList>
+          <TabsContent value="personal" className="mt-2">
+            <Textarea 
+              placeholder="Write your personal notes here..."
+              className="min-h-[300px] bg-white resize-none font-tahoma"
+            />
+          </TabsContent>
+          <TabsContent value="work" className="mt-2">
+            <Textarea 
+              placeholder="Write your work-related notes here..."
+              className="min-h-[300px] bg-white resize-none font-tahoma"
+            />
+          </TabsContent>
+          <TabsContent value="ideas" className="mt-2">
+            <Textarea 
+              placeholder="Write your ideas here..."
+              className="min-h-[300px] bg-white resize-none font-tahoma"
+            />
+          </TabsContent>
+        </Tabs>
+      );
+    }
+    return (
+      <div className="p-4">
+        <h2 className="text-lg font-semibold mb-4">{title}</h2>
+        <p className="text-gray-600">Content for {title}</p>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-[url('/lovable-uploads/1ca93d81-8052-47a5-9ebd-bbedc21d0ad5.png')] bg-cover bg-center p-4">
       <div className="grid grid-cols-auto-fit gap-6 p-4">
@@ -81,14 +121,7 @@ export const Desktop = () => {
           onClose={() => closeWindow(window.id)}
           initialPosition={window.position}
         >
-          <div className="p-4">
-            <h2 className="text-lg font-semibold mb-4">{window.title}</h2>
-            <p className="text-gray-600">
-              {window.title === 'Notepad' 
-                ? "Taishi's random thoughts that were not sufficient enough to become full blogs"
-                : `Content for ${window.title}`}
-            </p>
-          </div>
+          {renderWindowContent(window.title)}
         </Window>
       ))}
       
