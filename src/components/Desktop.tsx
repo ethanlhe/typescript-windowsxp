@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Window } from './Window';
 import { TaskBar } from './TaskBar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Textarea } from './ui/textarea';
+import { RadioGroup, RadioGroupItem } from './ui/radio-group';
+import { Button } from './ui/button';
+import { Label } from './ui/label';
 
 interface WindowState {
   id: number;
@@ -58,29 +60,92 @@ export const Desktop = () => {
   const renderWindowContent = (title: string) => {
     if (title === 'Notepad') {
       return (
-        <Tabs defaultValue="personal" className="w-full">
-          <TabsList className="w-full bg-vista-window border-b border-vista-border">
-            <TabsTrigger value="personal" className="data-[state=active]:bg-white">Personal Notes</TabsTrigger>
-            <TabsTrigger value="work" className="data-[state=active]:bg-white">Work Notes</TabsTrigger>
-            <TabsTrigger value="ideas" className="data-[state=active]:bg-white">Ideas</TabsTrigger>
+        <Tabs defaultValue="music" className="w-full">
+          <TabsList className="w-full bg-vista-window border-b border-vista-border rounded-none">
+            <TabsTrigger 
+              value="music" 
+              className="data-[state=active]:bg-white rounded-none px-6"
+            >
+              Music
+            </TabsTrigger>
+            <TabsTrigger 
+              value="dogs" 
+              className="data-[state=active]:bg-white rounded-none px-6"
+            >
+              Dogs
+            </TabsTrigger>
+            <TabsTrigger 
+              value="food" 
+              className="data-[state=active]:bg-white rounded-none px-6"
+            >
+              Food
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="personal" className="mt-2">
-            <Textarea 
-              placeholder="Write your personal notes here..."
-              className="min-h-[300px] bg-white resize-none font-tahoma"
-            />
+          
+          <TabsContent value="music" className="mt-4 px-6">
+            <h2 className="text-lg mb-6">Set your listening preferences</h2>
+            
+            <div className="border rounded-lg p-6 bg-white">
+              <div className="text-vista-accent font-semibold mb-4">Today's mood</div>
+              
+              <RadioGroup defaultValue="nicki" className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="nicki" id="nicki" />
+                  <Label htmlFor="nicki">Nicki Minaj</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="bell" id="bell" />
+                  <Label htmlFor="bell">Bell Towers</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="monique" id="monique" />
+                  <Label htmlFor="monique">The Glamorous Monique</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="env" id="env" />
+                  <Label htmlFor="env">EN. V</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="mt-4">
+              <Button 
+                variant="outline" 
+                className="mr-2 border-vista-border text-vista-text"
+              >
+                Reset Alarm...
+              </Button>
+              <span className="text-sm text-gray-600">Try this to get some attention</span>
+            </div>
+
+            <div className="flex justify-end gap-2 mt-8">
+              <Button 
+                variant="outline" 
+                className="border-vista-border text-vista-text px-6"
+              >
+                OK
+              </Button>
+              <Button 
+                variant="outline" 
+                className="border-vista-border text-vista-text px-6"
+              >
+                Cancel
+              </Button>
+            </div>
           </TabsContent>
-          <TabsContent value="work" className="mt-2">
-            <Textarea 
-              placeholder="Write your work-related notes here..."
-              className="min-h-[300px] bg-white resize-none font-tahoma"
-            />
+          
+          <TabsContent value="dogs" className="mt-4 px-6">
+            <div className="p-4">
+              <h2 className="text-lg mb-4">Dog Settings</h2>
+              <p className="text-gray-600">Configure your dog preferences here.</p>
+            </div>
           </TabsContent>
-          <TabsContent value="ideas" className="mt-2">
-            <Textarea 
-              placeholder="Write your ideas here..."
-              className="min-h-[300px] bg-white resize-none font-tahoma"
-            />
+          
+          <TabsContent value="food" className="mt-4 px-6">
+            <div className="p-4">
+              <h2 className="text-lg mb-4">Food Settings</h2>
+              <p className="text-gray-600">Configure your food preferences here.</p>
+            </div>
           </TabsContent>
         </Tabs>
       );
